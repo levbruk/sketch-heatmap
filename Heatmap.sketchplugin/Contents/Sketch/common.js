@@ -81,7 +81,6 @@ function drawHeatmap(layer) {
 	var fill = heatmap.style().fills().firstObject()
 
 	// *** Crashes on corrupt data or connection reset
-	var imageURL = "https://workshop.levbruk.com/sketch-heatmap/api/"
 	var image = uploadArtboard() //fetchImageForLayer(layer, imageURL)
 	if (image) {
         fill.fillType = FillType.Pattern
@@ -95,7 +94,7 @@ function drawHeatmap(layer) {
 
 
 function uploadArtboard(){
- 	var url = "https://workshop.levbruk.com/sketch-heatmap/image.php"
+ 	var url = "https://workshop.levbruk.com/sketch-heatmap/api/"
     var copy = [artboard duplicate]
     var slice = MSExportRequest.exportRequestsFromExportableLayer(copy).firstObject()
     [copy removeFromParent]

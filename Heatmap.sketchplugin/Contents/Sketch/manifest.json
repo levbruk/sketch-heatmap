@@ -1,0 +1,33 @@
+{
+	"name": "Heatmap",
+	"description": "Generate visual importance prediction heatmap (⌃⌘G) based on neural network model trained on crowd-sourced importance.",
+	"author": "Lev Bruk",
+	"authorEmail": "lev@levbruk.com",
+	"homepage": "http://workshop.levbruk.com/sketch-heatmap",
+	"version": 0.1,
+	"identifier": "com.levbruk.sketch-heatmap",
+	"updateURL": "http://workshop.levbruk.com/sketch-heatmap/update.json",
+	"compatibleVersion": 48.2,
+	"bundleVersion": 1,
+
+	"commands": [
+	 {
+	  "name": "Generate",
+	  "identifier": "generate",
+	  "shortcut": "cmd control g",
+	  "script": "Generate.js"
+	 },
+	 {
+	  "name": "Settings",
+	  "identifier": "settings",
+	  "script": "Settings.js"
+	 }
+	],
+
+	"menu": {
+		"title": "Heatmap",
+		"items": [
+		 "generate"
+		]
+	}
+}

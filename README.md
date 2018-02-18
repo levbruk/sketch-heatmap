@@ -6,7 +6,7 @@ The plugin is based on ["Learning Visual Importance for Graphic Designs and Data
 
 ## How to install
 
-1. [Download the latest version](https://github.com/levbruk/sketch-heatmap/blob/master/archives/sketch-heatmap-0.1.zip)
+1. [Download the latest version](https://github.com/levbruk/sketch-heatmap/blob/master/archives/sketch-heatmap-0.2.zip)
 2. Unzip file and open `Sketch-Heatmap.sketchplugin`
 
 
@@ -20,8 +20,11 @@ The plugin is based on ["Learning Visual Importance for Graphic Designs and Data
 
 ## Changelog
 
+#### 0.2 — Stable version to try out
+Critical bug fixed. No more crashes, yet.
+
 #### 0.1 — First version to test with designers
-Unstable. Crashes Sketch app if it has no internet connection or if there are server-side issues. Save your documents before using the plugin.
+Unstable. Crashes Sketch app if there are server-side issues. Save your documents before using the plugin.
 
 
 ## License

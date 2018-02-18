@@ -43,7 +43,10 @@ function deselectAllLayers() {
 
 // UI message
 
-function showMessage(text) {
+function showMessage(text, random = false) {
+	if (random) {
+		text = text+randomTextChance()
+	}
 	document.showMessage(text)
 }
 

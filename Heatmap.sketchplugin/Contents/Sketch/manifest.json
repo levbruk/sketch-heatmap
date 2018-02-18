@@ -4,7 +4,7 @@
 	"author": "Lev Bruk",
 	"authorEmail": "lev@levbruk.com",
 	"homepage": "http://workshop.levbruk.com/sketch-heatmap",
-	"version": 0.1,
+	"version": 0.2,
 	"identifier": "com.levbruk.sketch-heatmap",
 	"updateURL": "http://workshop.levbruk.com/sketch-heatmap/update.json",
 	"compatibleVersion": 48.2,

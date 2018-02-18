@@ -12,15 +12,15 @@
 
 	"commands": [
 	 {
-	  "name": "Generate",
-	  "identifier": "generate",
-	  "shortcut": "cmd control g",
-	  "script": "Generate.js"
+		"name": "Generate",
+		"identifier": "generate",
+		"shortcut": "cmd control g",
+		"script": "Generate.js"
 	 },
 	 {
-	  "name": "Settings",
-	  "identifier": "settings",
-	  "script": "Settings.js"
+		"name": "Settings",
+		"identifier": "settings",
+		"script": "Settings.js"
 	 }
 	],
 

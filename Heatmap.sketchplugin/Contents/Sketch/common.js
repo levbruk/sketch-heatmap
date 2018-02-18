@@ -64,47 +64,47 @@ function drawHeatmap(layer) {
 		//context.selection.push(heatmap) //.setIsSelected(true)
 
 		var fill = heatmap.style().fills().firstObject()
-        fill.fillType = FillType.Pattern
-        fill.patternFillType = PatternFillType.Fill
-        fill.image = MSImageData.alloc().initWithImage(image)
+		fill.fillType = FillType.Pattern
+		fill.patternFillType = PatternFillType.Fill
+		fill.image = MSImageData.alloc().initWithImage(image)
 		setOpacity(heatmap, 0.8)
-		
+
 		return true
-    } else {
-        return false
-    }
+	} else {
+		return false
+	}
 }
 
 
 function uploadArtboard(){
- 	var url = "https://workshop.levbruk.com/sketch-heatmap/api/"
-    var copy = [artboard duplicate]
-    var slice = MSExportRequest.exportRequestsFromExportableLayer(copy).firstObject()
-    [copy removeFromParent]
-    slice.scale = 1
-    slice.format = "jpg"
-    var filePath = NSTemporaryDirectory() + "heatmap/" + artboard.objectID() + ".jpg"
-    [document saveArtboardOrSlice:slice toFile: filePath]
-    var task = NSTask.alloc().init()
-    task.setLaunchPath("/usr/bin/curl")
+	var url = "https://workshop.levbruk.com/sketch-heatmap/api/"
+	var copy = [artboard duplicate]
+	var slice = MSExportRequest.exportRequestsFromExportableLayer(copy).firstObject()
+	[copy removeFromParent]
+	slice.scale = 1
+	slice.format = "jpg"
+	var filePath = NSTemporaryDirectory() + "heatmap/" + artboard.objectID() + ".jpg"
+	[document saveArtboardOrSlice:slice toFile: filePath]
+	var task = NSTask.alloc().init()
+	task.setLaunchPath("/usr/bin/curl")
 	var args = ["-X", "POST", "-F", "image=@" + filePath, url]
 
 	task.setArguments(args)
-    var outputPipe = [NSPipe pipe]
-    [task setStandardOutput:outputPipe]
-    task.launch()
-	task.waitUntilExit()
-	int status = [task terminationStatus]
-	if (status == 0) {
-    	var outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile]
+	var outputPipe = [NSPipe pipe]
+	[task setStandardOutput:outputPipe]
+	task.launch()
+	//task.waitUntilExit()
+	//int status = [task terminationStatus]
+	//if (status == 0) {
+		var outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile]
 		var outputString = [[[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding]]
 		//print(outputString)
 		if (isValidImage(outputData)) {
 			return NSImage.alloc().initWithData(outputData) //NSImage.alloc().initWithData(outputData)
 		}
-	}
-    //var outputString = [[[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding]]
-    //var outputArray = [NSJSONSerialization JSONObjectWithData:outputData options:NSJSONReadingAllowFragments error:nil]
+	//}
+	//var outputString = [[[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding]]
+	//var outputArray = [NSJSONSerialization JSONObjectWithData:outputData options:NSJSONReadingAllowFragments error:nil]
 }
 
 
